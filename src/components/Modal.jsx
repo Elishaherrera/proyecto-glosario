@@ -5,14 +5,14 @@ export default function Modal() {
   return (
     <>
       <button
-        className="bg-cyan-500 py-2 px-6 rounded-sm text-white font-bold m-5"
+        className="bg-blue-600 py-2 px-6 rounded-lg text-white m-5"
         onClick={() => setIsopen(true)}
       >
-        Open Modal
+        Nueva Entrada
       </button>
       {isopen && (
-        <div className="fixed inset-0 bg-gray-200 bg-opacity-30 backdrop-blur-sm flex justify-center items-center">
-          <div className="bg-white p-5 rounded flex flex-col justify-center items-center gap-5">
+        <div className="fixed z-200  inset-0 bg-black/60 backdrop-blur-sm flex justify-center items-center">
+          <div className="bg-white p-5 rounded flex flex-col gap-5 h-[90vh] overflow-auto">
             <div>
               <div className="p-4 space-y-2">
                 <div className="font-bold text-xl p-2">Nueva entrada</div>
@@ -107,7 +107,10 @@ export default function Modal() {
                 </div>
                 <div className="border-b border-gray-400 p-2 m-2"></div>
                 <div className="space-x-2">
-                  <button className="bg-gray-100 border-1 border-gray-400 px-4 py-2 gap-2 inline-flex rounded-lg text-gray-700 mt-4 hover:bg-gray-200 transition-colors cursor-pointer ml-4">
+                  <button
+                    className="bg-gray-100 border-1 border-gray-400 px-4 py-2 gap-2 inline-flex rounded-lg text-gray-700 mt-4 hover:bg-gray-200 transition-colors cursor-pointer ml-4"
+                    onClick={() => setIsopen(false)}
+                  >
                     Cancelar
                   </button>
                   <button className="bg-blue-600 px-4 py-2 gap-2 inline-flex rounded-lg text-white mt-4 hover:bg-blue-700 transition-colors cursor-pointer">
@@ -115,14 +118,6 @@ export default function Modal() {
                   </button>
                 </div>
               </div>
-            </div>
-            <div>
-              <button
-                className="bg-red-500 py-2 px-6 rounded-sm text-white font-bold m-5"
-                onClick={() => setIsopen(false)}
-              >
-                Close Modal
-              </button>
             </div>
           </div>
         </div>
