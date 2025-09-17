@@ -5,7 +5,7 @@ export default function ModalRef() {
   return (
     <>
       <button
-        className="bg-blue-200 py-2 px-6 rounded-lg text-blue-600 m-5 cursor-pointer"
+        className="bg-blue-50 hover:bg-blue-100 py-1 px-4 rounded-md text-blue-700 text-sm cursor-pointer"
         onClick={() => setIsopen(true)}
       >
         + Ref
@@ -15,20 +15,21 @@ export default function ModalRef() {
           <div className="bg-white p-5 rounded flex flex-col gap-5 h-[90vh] overflow-auto">
             <div className="p-4 space-y-2">
               <h3 className="font-bold text-xl">Agregar Referencia a "amor"</h3>
-              <div className="border-b border-gray-400 p-2 m-2"></div>
+              <div className="border-b border-gray-300"></div>
               <div className="inline-flex gap-8">
                 <div className="flex flex-col">
                   <span className="text-gray-800 font-medium">Palabra *</span>
                   <input
                     type="text"
-                    className="w-80 px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 mb-4"
+                    placeholder="amor"
+                    className="px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 mb-4"
                   />
                 </div>
                 <div className="flex flex-col">
                   <span className="text-gray-800 font-medium">
                     Tipo de palabra
                   </span>
-                  <select className=" w-80 px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 mb-4">
+                  <select className="px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 mb-4">
                     <option>Seleccionar...</option>
                     <option>Sustantivo</option>
                     <option>Verbo</option>
@@ -38,7 +39,7 @@ export default function ModalRef() {
                   </select>
                 </div>
               </div>
-              <div className="border-b border-gray-400 p-2 m-2"></div>
+              <div className="border-b border-gray-300"></div>
               <h4 className="font-medium">Nueva referencia bíblica</h4>
               <div className="flex items-center gap-4 mb-4">
                 <div className="flex flex-col">
@@ -46,21 +47,21 @@ export default function ModalRef() {
                   <input
                     type="text"
                     placeholder="Mateo"
-                    className="w-60 px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 mb-2"
+                    className="px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 mb-2"
                   />
                 </div>
                 <div className="flex flex-col">
                   <span className="text-gray-800 font-medium">Cap. *</span>
                   <input
                     type="number"
-                    className="w-60 px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 mb-2"
+                    className="px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 mb-2"
                   />
                 </div>
                 <div className="flex flex-col">
                   <span className="text-gray-800 font-medium">Vers. *</span>
                   <input
                     type="number"
-                    className="w-60 px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 mb-2"
+                    className="px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 mb-2"
                   />
                 </div>
               </div>
@@ -68,12 +69,12 @@ export default function ModalRef() {
                 <span className="text-gray-800 font-medium">Contexto</span>
                 <textarea
                   placeholder="Texto del versículo donde aparece la palabra..."
-                  className="w-80 h-24 px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 mb-4"
+                  className="px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 mb-4"
                 ></textarea>
-                <div className="border-b border-gray-400 p-2 m-2"></div>
+                <div className="border-b border-gray-300 mb-2"></div>
               </div>
               <div className="flex flex-col">
-                <span className="font-bold">Decisión de Traducción</span>
+                <span className="font-medium">Decisión de Traducción</span>
               </div>
               <div className="inline-flex gap-4">
                 <input
@@ -90,13 +91,13 @@ export default function ModalRef() {
                 Nueva decisión
               </div>
               <div className="flex flex-col">
-                <span className="mt-8 text-gray-800 font-medium">
+                <span className="mt-2 text-gray-800 font-medium">
                   Nueva Traducción *
                 </span>
                 <input
                   type="text"
                   placeholder="Cómo se tradujo esta palabra en este contexto"
-                  className="w-92 px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 mb-4"
+                  className="px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 mb-4"
                 />
               </div>
               <div className="flex flex-col">
@@ -105,11 +106,11 @@ export default function ModalRef() {
                 </span>
                 <textarea
                   placeholder="Razones para esta desición de traducción..."
-                  className="w-80 h-24 px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 mb-4"
+                  className="px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 mb-4"
                 ></textarea>
               </div>
-              <div className="border-b border-gray-400 p-2 m-2"></div>
-              <div className="space-x-2">
+              <div className="border-b border-gray-300"></div>
+              <div className="flex justify-end space-x-2">
                 <button
                   className="bg-gray-100 border-1 border-gray-400 px-4 py-2 gap-2 inline-flex rounded-lg text-gray-700 mt-4 hover:bg-gray-200 transition-colors cursor-pointer ml-4"
                   onClick={() => setIsopen(false)}

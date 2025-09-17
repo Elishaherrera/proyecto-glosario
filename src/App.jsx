@@ -4,12 +4,13 @@ import Modal from "./components/Modal";
 import ModalRef from "./components/ModalRef";
 import ModalDetalles from "./components/ModalDetalles";
 import TarjetaPalabra from "./components/TarjetaPalabra";
+import TarjetaTotal from "./components/TarjetaPalabra/TarjetaTotal";
 
 function App() {
   return (
     <>
       <div className=" bg-gray-50">
-        <div className="bg-white shadow-sm border-b border-gray-200 p-2 px-12 flex">
+        <div className="bg-white shadow-sm border-b border-gray-200 px-12 items-center flex">
           <div className="flex-grow">
             <div className="inline-flex items-center gap-4">
               <div>
@@ -40,7 +41,7 @@ function App() {
             <Modal />
           </div>
         </div>
-        <div className="bg-white shadow-sm border border-gray-200 p-6 flex m-12 rounded-xl">
+        <div className="bg-white shadow-sm border border-gray-200 p-6 flex mb-6 mt-6 rounded-xl container mx-auto">
           <div className="flex-1 relative">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -60,10 +61,26 @@ function App() {
             <input
               type="text"
               placeholder="Buscar por palabra, palabras relacionadas, referencia o traducción..."
-              className="w-240 pl-10 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="w-[90%] pl-10 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
           </div>
-          <div className="flex items-center">
+
+          <select className="w-[12%] rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400">
+            <option>Todos los tipos</option>
+            <option>Verbos</option>
+            <option>Sustantivos</option>
+            <option>Adjetivos</option>
+            <option>Adverbios</option>
+          </select>
+        </div>
+        <TarjetaPalabra
+          titulo="amor"
+          palabra="sustantivo"
+          referencias="# 2 referencias"
+          parrafo="Sentimiento intenso del ser humano que busca el bien de otra persona"
+          palabras="amar"
+          unoMas="+ 1 más"
+          icono={
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -74,27 +91,12 @@ function App() {
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
-              class="lucide lucide-filter w-5 h-5 text-gray-400"
+              class="lucide lucide-book w-3 h-3 text-gray-600"
             >
-              <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+              <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path>
             </svg>
-          </div>
-          <select className="ml-4 px-3 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400">
-            <option>Todos los tipos</option>
-            <option>Verbos</option>
-            <option>Sustantivos</option>
-            <option>Adjetivos</option>
-            <option>Adverbios</option>
-          </select>
-        </div>
-
-        <TarjetaPalabra
-          titulo="amor"
-          palabra="sustantivo"
-          referencias="# 2 referencias"
-          parrafo="Sentimiento intenso del ser humano que busca el bien de otra persona"
-          palabras="amar"
-          unoMas="+ 1 más"
+          }
+          versiculo="Juan 3:16"
         />
         <TarjetaPalabra
           titulo="Paz"
@@ -102,11 +104,29 @@ function App() {
           referencias="# 1 referencia"
           parrafo="Estado de tranquilidad y armonía"
           palabras="pacífico"
+          unoMas="+ 1 más"
+          icono={
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-book w-3 h-3 text-gray-600"
+            >
+              <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path>
+            </svg>
+          }
+          versiculo="Filipenses 4:7"
         />
 
-        <div className="bg-white shadow-sm border border-gray-200 p-4 m-12 rounded-lg">
-          <div className="flex flex-col">
-            <div className="flex items-center gap-2 mb-2">
+        <div className="flex justify-between container mx-auto items-center space-x-2">
+          <TarjetaTotal
+            icono={
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -125,12 +145,53 @@ function App() {
                 <path d="M16 13H8"></path>
                 <path d="M16 17H8"></path>
               </svg>
-              <span className="text-gray-600 font-medium text-sm">
-                Total de palabras
-              </span>
-            </div>
-            <span className="font-bold text-2xl">2</span>
-          </div>
+            }
+            titulo="Total de palabras"
+            numero="2"
+          />
+          <TarjetaTotal
+            icono={
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-book w-5 h-5 text-emerald-600"
+              >
+                <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path>
+              </svg>
+            }
+            titulo="Total de referencias"
+            numero="3"
+          />
+          <TarjetaTotal
+            icono={
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-hash w-5 h-5 text-orange-600"
+              >
+                <line x1="4" x2="20" y1="9" y2="9"></line>
+                <line x1="4" x2="20" y1="15" y2="15"></line>
+                <line x1="10" x2="8" y1="3" y2="21"></line>
+                <line x1="16" x2="14" y1="3" y2="21"></line>
+              </svg>
+            }
+            titulo="Libros cubiertos"
+            numero="3"
+          />
         </div>
       </div>
     </>
