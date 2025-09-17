@@ -10,7 +10,7 @@ export default function TarjetaPalabra({
   palabras,
   unoMas,
   icono,
-  versiculo,
+  versiculos,
   verDetalles,
 }) {
   return (
@@ -32,20 +32,33 @@ export default function TarjetaPalabra({
       </div>
       <p className="mt-4 text-gray-700">{parrafo}</p>
       <div className="inline-flex items-center gap-2 mt-2">
-        <span className="bg-green-50 text-emerald-700 px-2 py-1 w-12 rounded text-sm">
-          {palabras}
-        </span>
+        {palabras.map((p, i) => {
+          return (
+            <span className="bg-green-50 text-emerald-700 px-2 py-1  rounded text-sm">
+              {p}
+            </span>
+          );
+        })}
+
         <span className="bg-gray-100 text-gray-500 px-2 py-1 w-17 rounded text-sm">
           {unoMas}
         </span>
       </div>
       <div className="border-b border-gray-200 mb-2 mt-2"></div>
-      <div className="inline-flex space-x-2 items-center">
-        {icono}
-        <span className="text-gray-600 text-sm">{versiculo}</span>
-      </div>
-      <div className="inline-flex justify-end items-center">
-        <ModalDetalles />
+      <div className="flex  justify-between items-center">
+        <div className="space-x-4">
+          {versiculos.map((v, i) => {
+            return (
+              <div className="inline-flex space-x-2 items-center">
+                {icono}
+                <span className="text-gray-600 text-sm">{v}</span>
+              </div>
+            );
+          })}
+        </div>
+        <div className="inline-flex justify-end items-center">
+          <ModalDetalles />
+        </div>
       </div>
     </div>
   );

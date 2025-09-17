@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <div className=" bg-gray-50">
-        <div className="bg-white shadow-sm border-b border-gray-200 px-12 items-center flex">
+        <div className="bg-white shadow-sm border-b border-gray-200 px-12 flex p-2">
           <div className="flex-grow">
             <div className="inline-flex items-center gap-4">
               <div>
@@ -37,7 +37,7 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="inline-flex items-center justify-center">
+          <div className="inline-flex justify-center">
             <Modal />
           </div>
         </div>
@@ -65,7 +65,7 @@ function App() {
             />
           </div>
 
-          <select className="w-[12%] rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400">
+          <select className="w-[12%] px-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400">
             <option>Todos los tipos</option>
             <option>Verbos</option>
             <option>Sustantivos</option>
@@ -78,7 +78,7 @@ function App() {
           palabra="sustantivo"
           referencias="# 2 referencias"
           parrafo="Sentimiento intenso del ser humano que busca el bien de otra persona"
-          palabras="amar"
+          palabras={["amar", "amado", "amando", "amarás"]}
           unoMas="+ 1 más"
           icono={
             <svg
@@ -96,14 +96,14 @@ function App() {
               <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path>
             </svg>
           }
-          versiculo="Juan 3:16"
+          versiculos={["Juan 3:16", "1 corintios 13:4"]}
         />
         <TarjetaPalabra
           titulo="Paz"
           palabra="sustantivo"
           referencias="# 1 referencia"
           parrafo="Estado de tranquilidad y armonía"
-          palabras="pacífico"
+          palabras={["pacífico", "pacificar", "apaciguar"]}
           unoMas="+ 1 más"
           icono={
             <svg
@@ -121,7 +121,7 @@ function App() {
               <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path>
             </svg>
           }
-          versiculo="Filipenses 4:7"
+          versiculos={["Filipenses 4:7", "salmo 73:25"]}
         />
 
         <div className="flex justify-between container mx-auto items-center space-x-2">
