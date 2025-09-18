@@ -1,5 +1,6 @@
 import { useState } from "react";
 import TarjetaDecision from "./TarjetaDecision";
+import ModalRef from "./ModalRef";
 
 export default function ModalDetalles() {
   const [isopen, setIsopen] = useState(false);
@@ -35,13 +36,12 @@ export default function ModalDetalles() {
                   <h3 className="font-bold text-2xl">amor</h3>
                 </div>
                 <div className="space-x-4">
-                  <button className="text-blue-600 hover:bg-blue-50 cursor-pointer rounded-lg p-2 text-sm">
-                    + Agregar referencia
-                  </button>
+                  <ModalRef texto="+ Agregar referencia" />
                   <button
                     type="button"
                     className="rounded-md text-gray-400 hover:text-gray-500 cursor-pointer"
                     id="donateCloseBtn"
+                    onClick={() => setIsopen(false)}
                   >
                     <span className="sr-only">Cerrar</span>
                     <svg

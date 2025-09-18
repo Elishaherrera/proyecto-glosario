@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function ModalRef() {
+export default function ModalRef({ texto }) {
   const [isopen, setIsopen] = useState(false);
   return (
     <>
@@ -8,7 +8,7 @@ export default function ModalRef() {
         className="bg-blue-50 hover:bg-blue-100 py-1 px-4 rounded-md text-blue-700 text-sm cursor-pointer"
         onClick={() => setIsopen(true)}
       >
-        + Ref
+        {texto}
       </button>
       {isopen && (
         <div className="fixed z-200  inset-0 bg-black/60 backdrop-blur-sm flex justify-center items-center">

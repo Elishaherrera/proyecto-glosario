@@ -20,7 +20,7 @@ export default function TarjetaPalabra({
           {titulo}
         </h1>
         <div className="space-x-2">
-          <ModalRef />
+          <ModalRef texto="+ Ref" />
           <span className="text-gray-400 text-sm">17-09-2025</span>
         </div>
       </div>
